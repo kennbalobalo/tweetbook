@@ -317,11 +317,23 @@ $(function(){
 
 			//if not add to search history
 			if (newSearch) {
-				this.searchList.add({
-					query: query,
-					isFB: isFB,
-					isTwitter: isTwitter
-				});
+				if (localStorage.getItem("hist") ==null)
+				{
+					localStorage.setItem("hist", 1)
+				}
+				else
+				{
+					localStorage.setItem("hist", parseInt(localStorage.getItem("hist"))+1)
+				}
+				var i=localStorage.getItem("hist");
+				localStorage.setItem("query"+i, query);
+				localStorage.setItem("FB"+i, isFB);
+				localStorage.setItem("Twitter"+1, isTwitter);
+					this.searchList.add({
+						query: query,
+						isFB: isFB,
+						isTwitter: isTwitter
+					});
 			}
 
 			if (isFB) {
