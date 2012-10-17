@@ -237,6 +237,24 @@ $(function(){
 				searchList: this.searchList
 			});
 
+			var i=1;
+			while(localStorage.getItem("hist")>=i)
+			{
+			var query= localStorage.getItem("query"+i);
+			var FB=false;
+			if(localStorage.getItem("FB"+i)==="true")
+				FB=true;
+			var Tweet=false;
+			if(localStorage.getItem("Twitter"+i)==="true")
+				Tweet=true;
+			this.searchList.add({
+					query:query,
+					isFB: FB,
+					isTwitter: Tweet
+				});
+			i++;
+			}	
+
 			//set event handlers
 			_.bindAll(this, 'onTweetAdd');
 			this.tweets.bind('add', this.onTweetAdd);
@@ -348,8 +366,9 @@ $(function(){
 
 			//display tweet item
 			this.$('.tweets-result').append(fbfeedController.render().el);
-		}
 
+		onSearchLi
+		}
 	});
 
 	window.application = new app.mainController({
