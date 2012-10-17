@@ -192,7 +192,7 @@ $(function(){
 			"click .tweet-reply": "onReply",
 			"click .tweet-retweet": "onRetweet",
 			"click .tweet-favorite": "onFavorite",
-			"click #clearSH": "clearLocalStorage"
+	
 		},
 		initialize: function() {
 			this.render();
