@@ -191,7 +191,8 @@ $(function(){
 		events: {
 			"click .tweet-reply": "onReply",
 			"click .tweet-retweet": "onRetweet",
-			"click .tweet-favorite": "onFavorite"
+			"click .tweet-favorite": "onFavorite",
+			"click #clearSH": "clearLocalStorage"
 		},
 		initialize: function() {
 			this.render();
@@ -286,6 +287,10 @@ $(function(){
 				console.log(res);
 				that.fbFeeds.add(res.data);
 			});
+		},
+		clearLocalStorage: function()
+		{
+			localStorage.clear();
 		},
 		onFBLogin: function() {
 			fbUser.login();
