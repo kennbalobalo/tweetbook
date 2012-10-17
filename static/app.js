@@ -225,7 +225,8 @@ $(function(){
 		events: {
 			'submit .tweet-search': 'onSearch',
 			'click #fb-login': 'onFBLogin',
-			'click #fb-logout': 'onFBLogout'
+			'click #fb-logout': 'onFBLogout',
+			'click #clearSH': 'clearLocalStorage'
 		},
 		initialize: function () {
 			this._tweetsView = [];
@@ -332,8 +333,8 @@ $(function(){
 					this.searchList.add({
 						query: query,
 						isFB: isFB,
-						isTwitter: isTwitter
-					});
+					isTwitter: isTwitter
+				});
 			}
 
 			if (isFB) {
