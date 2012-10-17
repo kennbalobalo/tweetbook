@@ -385,7 +385,6 @@ $(function(){
 			//display tweet item
 			this.$('.tweets-result').append(fbfeedController.render().el);
 
-		onSearchLi
 		}
 	});
 
